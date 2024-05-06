@@ -1,6 +1,6 @@
 package p1_interfaces;
 
-public class ExcluirEspacosExtras implements ManipuladorDeString {
+public class RemovedorDeEspacosExtras implements ManipuladorString {
 
     public String aplicar(String str) {
         return str.trim();

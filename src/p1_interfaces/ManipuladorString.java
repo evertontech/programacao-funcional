@@ -1,7 +1,7 @@
 package p1_interfaces;
 
 @FunctionalInterface
-public interface ManipuladorDeString {
+public interface ManipuladorString {
 
     String aplicar(String str);
 }
