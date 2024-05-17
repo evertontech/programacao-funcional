@@ -19,6 +19,6 @@ public class App {
 
         Function<Produto, Double> calcularPrecoFinal = (produto) -> produto.preco * produto.desconto;
 
-        Predicate<Produto> temFrete = (produto) -> produto.preco > 50.00;
+        Predicate<Double> temFrete = (preco) -> preco > 50.00;
     }
 }
