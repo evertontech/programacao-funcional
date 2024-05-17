@@ -28,5 +28,7 @@ public class App {
             }
             return preco;
         };
+
+        UnaryOperator<Double> acrescerImposto = (preco) -> preco * 0.045;
     }
 }
