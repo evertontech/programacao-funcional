@@ -3,6 +3,7 @@ package p4_interfaces;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 public class App {
@@ -17,5 +18,7 @@ public class App {
         );
 
         Function<Produto, Double> calcularPrecoFinal = (produto) -> produto.preco * produto.desconto;
+
+        Predicate<Produto> temFrete = (produto) -> produto.preco > 50.00;
     }
 }
