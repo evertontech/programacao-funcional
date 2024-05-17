@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
 
 public class App {
     public static void main(String[] args) {
@@ -20,5 +21,12 @@ public class App {
         Function<Produto, Double> calcularPrecoFinal = (produto) -> produto.preco * produto.desconto;
 
         Predicate<Double> temFrete = (preco) -> preco > 50.00;
+
+        UnaryOperator<Double> acrescerFrete = (preco) -> {
+            if (temFrete.test(preco)) {
+                preco += 9.90;
+            }
+            return preco;
+        };
     }
 }
