@@ -2,6 +2,7 @@ package p4_interfaces;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class App {
@@ -14,5 +15,7 @@ public class App {
                 new Produto("Esparadrapo", 155.00, 0.25),
                 new Produto("Fralda", 45.00, 0.25)
         );
+
+        Function<Produto, Double> calcularPrecoFinal = (produto) -> produto.preco * produto.desconto;
     }
 }
