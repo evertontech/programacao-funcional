@@ -30,6 +30,8 @@ public class App {
 
         UnaryOperator<Double> arredondarPreco = (preco) -> Math.floor(preco);
 
-        
+        Consumer<Produto> imprimirProduto = (produto) -> {
+            System.out.println(produto.nome + produto.preco + produto.desconto);
+        };
     }
 }
