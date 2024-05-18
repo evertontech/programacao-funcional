@@ -2,10 +2,7 @@ package p4_interfaces;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
-import java.util.function.UnaryOperator;
+import java.util.function.*;
 
 public class App {
     public static void main(String[] args) {
@@ -30,5 +27,9 @@ public class App {
         };
 
         UnaryOperator<Double> acrescerImposto = (preco) -> preco * 0.045;
+
+        UnaryOperator<Double> arredondarPreco = (preco) -> Math.floor(preco);
+
+        
     }
 }
