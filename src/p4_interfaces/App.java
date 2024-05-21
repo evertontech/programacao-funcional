@@ -18,8 +18,6 @@ public class App {
 
         Function<Produto, Double> calcularPrecoFinal = (produto) -> produto.preco * produto.desconto;
 
-        Produto p1 = new Produto("Fralda", 45.00, 0.50);
-
         Predicate<Double> temFrete = (preco) -> preco > 50.00;
 
         UnaryOperator<Double> acrescerFrete = (preco) -> {
@@ -36,8 +34,8 @@ public class App {
             return Double.parseDouble(resultado);
         };
 
-        Consumer<Produto> imprimirProduto = System.out::println;
-
-        imprimirProduto.accept(p1);
+        BiConsumer<Produto, Double> imprimirProduto = (produto, novoPreco) -> {
+            System.out.println(produto.nome + ": R$ " + novoPreco);
+        };
     }
 }
