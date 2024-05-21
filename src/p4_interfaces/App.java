@@ -2,6 +2,7 @@ package p4_interfaces;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.function.*;
 
 public class App {
@@ -17,6 +18,8 @@ public class App {
 
         Function<Produto, Double> calcularPrecoFinal = (produto) -> produto.preco * produto.desconto;
 
+        Produto p1 = new Produto("Fralda", 45.00, 0.50);
+
         Predicate<Double> temFrete = (preco) -> preco > 50.00;
 
         UnaryOperator<Double> acrescerFrete = (preco) -> {
@@ -26,12 +29,15 @@ public class App {
             return preco;
         };
 
-        UnaryOperator<Double> acrescerImposto = (preco) -> preco * 0.045;
+        UnaryOperator<Double> acrescerImposto = (preco) -> preco + preco * 0.045;
 
-        UnaryOperator<Double> arredondarPreco = (preco) -> Math.floor(preco);
-
-        Consumer<Produto> imprimirProduto = (produto) -> {
-            System.out.println(produto.nome + produto.preco + produto.desconto);
+        UnaryOperator<Double> arredondarPreco = (preco) -> {
+            String resultado = String.format(Locale.US, "%.2f", preco);
+            return Double.parseDouble(resultado);
         };
+
+        Consumer<Produto> imprimirProduto = System.out::println;
+
+        imprimirProduto.accept(p1);
     }
 }
